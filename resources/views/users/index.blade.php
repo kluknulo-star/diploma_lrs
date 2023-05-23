@@ -2,17 +2,15 @@
 
 @section('content')
     <div class="container">
-        <h1>Users</h1>
-        <a href="{{route('users.create')}}">Create new user</a>
+        <h1>Пользователи</h1>
+        <a href="{{route('users.create')}}" class="btn btn-primary mb-1">Создать</a>
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Username</th>
-                <th scope="col">Email</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th scope="col">Имя</th>
+                <th scope="col">Почта</th>
+                <th colspan="3" class="text-center">Дейсвтия</th>
             </tr>
             </thead>
             @foreach($users as $user)
@@ -21,16 +19,16 @@
                     <td>{{$user->user_id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td><a href="{{route('users.show', ['id' => $user->user_id])}}">View</a>
+                    <td><a href="{{route('users.show', ['id' => $user->user_id])}}" class="btn btn-light">Посмтреть</a>
                     </td>
-                    <td><a href="{{route('users.edit', ['id' => $user->user_id])}}">Edit</a>
+                    <td><a href="{{route('users.edit', ['id' => $user->user_id])}}" class="btn btn-dark">Изменить</a>
                     </td>
                     <td>
                         @if(\Illuminate\Support\Facades\Auth::id() !== (int) $user->user_id)
                             <form action="{{route('users.destroy', ['id' => $user->user_id])}}" method="Post">
                                 @csrf
                                 @method('Delete')
-                                <button type="submit" class="delete-btn">Delete</button>
+                                <button type="submit" class="btn btn-danger">Удалить</button>
                             </form>
                         @endif
                     </td>

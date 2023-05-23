@@ -6,23 +6,23 @@
         <form action="{{route('statements')}}" method="post">
             @csrf
             <div class="form-group">
-                <label>Actor filter: </label>
+                <label>Actor фильтр: </label>
                 <input type="text" name="actor-filter" value="{{$filterParam['actor-filter'] ?? ''}}"/>
             </div>
             <div class="form-group">
-                <label>object filter: </label>
+                <label>Object фильтр: </label>
                 <input type="text" name="object-filter" value="{{$filterParam['object-filter'] ?? ''}}"/>
             </div>
             <div class="form-group">
-                <label>Verb filter: </label>
+                <label>Verb фильтр: </label>
                 <input type="text" name="verb-filter" value="{{$filterParam['verb-filter'] ?? ''}}"/>
             </div>
             <div class="form-group">
-                <label>Context filter: </label>
+                <label>Context фильтр: </label>
                 <input type="text" name="context-filter" value="{{$filterParam['context-filter'] ?? ''}}"/>
             </div>
             <div class="form-group">
-                <label>Sorted by: </label>
+                <label>Сортировать по: </label>
                 <select name="dep-sort">
                     <option
                         value="DESC"
@@ -36,12 +36,13 @@
                     </option>
                 </select>
             </div>
-            <button type="submit">Apply</button>
+            <button type="submit" class="btn btn-success rounded rounded-2 mb-2">Поиск</button>
         </form>
-        <form action="{{route('export.save', $formExportParams)}}" method="post">
-            @csrf
-            <button type="submit">Export</button>
-        </form>
+
+{{--        <form action="{{route('export.save', $formExportParams)}}" method="post">--}}
+{{--            @csrf--}}
+{{--            <button type="submit" class="btn btn-primary rounded rounded-2 mt-1 mb-1">Экспортировать</button>--}}
+{{--        </form>--}}
         @include('layouts.messages')
         @include('layouts.errors')
         <table class="table">

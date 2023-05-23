@@ -4,22 +4,22 @@
             @auth()
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('profile')}}">Profile</a>
+                    <a class="nav-link" href="{{route('profile')}}">Профиль</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('users.index')}}">Users</a>
+                    <a class="nav-link" href="{{route('users.index')}}">Пользователи</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{route('statements')}}">Statements</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{route('export.index')}}">My exports</a>
-                </li>
+{{--                <li class="nav-item active">--}}
+{{--                    <a class="nav-link" href="{{route('export.index')}}">Экспорт</a>--}}
+{{--                </li>--}}
             </ul>
             @endauth
             <div class="col-md-3 text-end">
                 @auth
-                    <a href="{{route('logout')}}" class="btn btn-dark me-2">Logout</a>
+                    <a href="{{route('logout')}}" class="btn btn-dark me-2">Выход</a>
                 @endauth
             </div>
         </div>
