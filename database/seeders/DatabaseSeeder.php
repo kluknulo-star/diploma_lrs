@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         //      php artisan db:seed
 
-        Statement::factory(500)->create();
+//        Statement::factory(500)->create();
 
         $user = new User;
         $user->name = 'name';
