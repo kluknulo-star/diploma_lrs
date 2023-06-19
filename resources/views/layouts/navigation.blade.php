@@ -4,13 +4,13 @@
             @auth()
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('profile')}}">Профиль</a>
+                    <a class="nav-link" href="{{route('profile')}}">Токены</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('users.index')}}">Пользователи</a>
+                    <a class="nav-link" href="{{route('users.index')}}">Админы LMS</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('statements')}}">Statements</a>
+                    <a class="nav-link" href="{{route('statements')}}">Предложения</a>
                 </li>
 {{--                <li class="nav-item active">--}}
 {{--                    <a class="nav-link" href="{{route('export.index')}}">Экспорт</a>--}}
@@ -19,7 +19,7 @@
             @endauth
             <div class="col-md-3 text-end">
                 @auth
-                    <a href="{{route('logout')}}" class="btn btn-dark me-2">Выход</a>
+                    <a href="{{route('logout')}}" class="btn btn-dark me-2">Выйти</a>
                 @endauth
             </div>
         </div>

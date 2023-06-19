@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
         $user->email = 'admin@mail.ru';
         $user->password = Hash::make('12345678');
         $user->save();
-        User::factory(20)->create();
+//        User::factory(20)->create();
     }
 }
