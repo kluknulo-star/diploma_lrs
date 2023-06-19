@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Statements</h1>
+        <h1>Предложения</h1>
         <form action="{{route('statements')}}" method="post">
             @csrf
             <div class="form-group">
